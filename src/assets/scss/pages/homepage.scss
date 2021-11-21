@@ -1,0 +1,101 @@
+.content {
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &_steps {
+        font-size: $font-sm + 1px;
+        font-weight: bold;
+        letter-spacing: $letter-spacing;
+        line-height: 25px;
+        text-align: right;
+        margin-top: 30px;
+        margin-bottom: 163px;
+        .dot {
+            &.active {
+                background-color: $brand-darkgray;
+            }
+            height: 4px;
+            width: 4px;
+            background-color: $brand-grey;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 10.5px;
+        }
+    }
+
+    &__container {
+        @media (min-width: 576px) {
+            @include paddingLeftRight(6.5rem);
+        }
+
+        @media (min-width: 768px) {
+            @include paddingLeftRight(4.5rem);
+        }
+
+        @media (min-width: 992px) {
+            @include paddingLeftRight(6.5rem);
+        }
+
+        @media (min-width: 1200px) {
+            @include paddingLeftRight(8.5rem);
+        }
+
+        @media (min-width: 1400px) {
+            @include paddingLeftRight(12.5rem);
+        }
+    }
+
+    &__col-5 {
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include paddingLeftRight(40px);
+
+        @media (min-width: 576px) {
+            @include paddingLeftRight(9rem);
+        }
+
+        @media (min-width: 768px) {
+            @include paddingLeftRight(4rem);
+            width: 41.6666666667%;
+        }
+
+        @media (min-width: 1200px) {
+            @include paddingLeftRight(6rem);
+        }
+
+        @media (min-width: 1400px) {
+            @include paddingLeftRight(9rem);
+        }
+    }
+
+    &__col-7 {
+        @include paddingLeftRight(40px);
+        @media (min-width: 768px) {
+            width: 58.3333333333%;
+        }
+    }
+
+    &__color-body {
+        &-header {
+            margin-bottom: 78px;
+        }
+        &-text {
+            @include fslh($font-md);
+        }
+    }
+
+    &__white-body {
+        &-header {
+            margin-bottom: 40px;
+        }
+        &-text {
+            @include fslh($font-normal);
+            margin-bottom: 40px;
+        }
+    }
+}

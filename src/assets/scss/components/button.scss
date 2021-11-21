@@ -1,0 +1,22 @@
+.btn {
+    display: inline-block;
+    font-weight: bold;
+    color: #212529;
+    border: unset;
+    cursor: pointer;
+    padding: 13px 21px;
+    font-size: 13px;
+    border-radius: $border-radius;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:disabled {
+        cursor: not-allowed;
+        color: $brand-grey;
+        background-color: $off-white;
+    }
+
+    &-primary {
+        background-color: $brand-primary;
+        color: $white
+    }
+}

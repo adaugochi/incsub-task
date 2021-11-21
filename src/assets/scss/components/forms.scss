@@ -1,0 +1,97 @@
+.form {
+    &-input {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        height: 50px;
+        background-color: transparent;
+        border: 1px solid $off-white;
+        border-radius: $border-radius;
+
+        &-wrapper {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        &-placeholder {
+            position: absolute;
+            z-index: 1;
+            font-size: $font-sm;
+            background-color: $white;
+            top: -10px;
+            margin-left: 15px;
+            display: none;
+            color: $brand-gray;
+            padding: 0 4px;
+            letter-spacing: $letter-spacing;
+            line-height: 20px;
+        }
+
+        &, span {
+            transition: top 0.2s ease-in-out;
+            -webkit-transition: top 0.2s ease-in-out;
+            -moz-transition: top 0.2s ease-in-out;
+            -o-transition: top 0.2s ease-in-out;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        &::placeholder {
+            @include fslh($font-normal);
+            color: $brand-gray;
+        }
+        &:focus {
+            border: 1px solid $off-white;
+            outline: unset;
+            &::placeholder {
+                color: transparent;
+            }
+            & ~ span {
+                display: block;
+            }
+        }
+
+        &:not(:placeholder-shown) ~ span {
+            display: block;
+        }
+    }
+
+    &-password {
+        @include inputIcon(url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="15" height="30" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>'));
+    }
+
+    &-hint {
+        font-size: $font-sm;
+        letter-spacing: $letter-spacing;
+        line-height: 20px;
+        color: $brand-gray;
+    }
+    &-btn-wrap {
+        display: grid $im;
+        gap: 0.5rem ;
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
+
+    &-footer {
+        font-size: $font-sm;
+        font-weight: bold;
+        letter-spacing: $letter-spacing;
+        line-height: 25px;
+        margin-bottom: 198px;
+    }
+}
+
+select {
+    @include inputIcon(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"));
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: 1px;
+    color: $brand-gray;
+}
